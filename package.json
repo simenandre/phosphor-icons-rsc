@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A clean and friendly icon family for React Server Components",
+  "packageManager": "pnpm@8.6.8",
   "author": {
     "name": "Tobias Fried",
     "email": "friedtm@gmail.com",
