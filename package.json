@@ -1,15 +1,15 @@
 {
-  "name": "@phosphor-icons/react",
+  "name": "phosphor-icons-rsc",
   "version": "2.0.9",
   "type": "module",
-  "description": "A clean and friendly icon family for React",
+  "description": "A clean and friendly icon family for React Server Components",
   "author": {
     "name": "Tobias Fried",
     "email": "friedtm@gmail.com",
     "url": "https://tobiasfried.com"
   },
   "license": "MIT",
-  "repository": "phosphor-icons/react",
+  "repository": "phosphor-icons-rsc",
   "homepage": "https://phosphoricons.com",
   "sideEffects": false,
   "private": false,
@@ -49,7 +49,10 @@
     "design",
     "interface",
     "UI",
-    "UX"
+    "UX",
+    "rsc",
+    "server",
+    "components"
   ],
   "scripts": {
     "serve": "vite serve ./example",

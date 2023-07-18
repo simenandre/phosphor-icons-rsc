@@ -53,37 +53,6 @@ Icon components accept all props that you can pass to a normal SVG element, incl
 - **mirrored?**: `boolean` – Flip the icon horizontally. Can be useful in RTL languages where normal icon orientation is not appropriate.
 - **alt?**: `string` – Add accessible alt text to an icon.
 
-### Context
-
-Phosphor takes advantage of React Context to make applying a default style to all icons simple. Create an `IconContext.Provider` at the root of the app (or anywhere above the icons in the tree) and pass in a configuration object with props to be applied by default to all icons:
-
-```tsx
-import { IconContext, Horse, Heart, Cube } from "@phosphor-icons/react";
-
-const App = () => {
-  return (
-    <IconContext.Provider
-      value={{
-        color: "limegreen",
-        size: 32,
-        weight: "bold",
-        mirrored: false,
-      }}
-    >
-      <div>
-        <Horse /> {/* I'm lime-green, 32px, and bold! */}
-        <Heart /> {/* Me too! */}
-        <Cube /> {/* Me three :) */}
-      </div>
-    </IconContext.Provider>
-  );
-};
-```
-
-You may create multiple Contexts for styling icons differently in separate regions of an application; icons use the nearest Context above them to determine their style.
-
-> **Note:** The context will also pass any provided SVG props down to icon instances, which can be useful E.G. in adding accessible `aria-label`s, `classNames`, etc.
-
 ### Composability
 
 <img src="/meta/cube-rotate.svg" width="128" align="right" />
@@ -132,7 +101,7 @@ import * as Icon from "@phosphor-icons/react";
 
 ### Custom Icons
 
-It is possible to extend Phosphor with your own custom icons, taking advantage of the styling and context abstractions used in our library. To create a custom icon, first design your icons on a 256x256 pixel grid, and export them as SVG. For best results, flatten the icon so that you only export assets with `path` elements. Strip any `fill` or `stroke` attributes, as these will be inherited from the wrapper.
+It is possible to extend Phosphor with your own custom icons and taking advantage of the styling. To create a custom icon, first design your icons on a 256x256 pixel grid, and export them as SVG. For best results, flatten the icon so that you only export assets with `path` elements. Strip any `fill` or `stroke` attributes, as these will be inherited from the wrapper.
 
 Next, create a new React `forwardRef` component, importing the `IconBase` component, as well as the `Icon` and `IconWeight` types from this library. Define a `Map<IconWeight, ReactElement>` that maps each icon weight to _the contents of each SVG asset_, effectively removing the wrapping `<svg>` element from each. Name your component, and render an `<IconBase />`, passing all props and the ref, as well as the `weights` you defined earlier, as JSX props:
 

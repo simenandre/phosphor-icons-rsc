@@ -177,7 +177,7 @@ function generateExports() {
   let indexString = `\
 /* GENERATED FILE */
 export type { Icon, IconProps, IconWeight } from "./lib";
-export { IconContext, IconBase } from "./lib";
+export { IconBase } from "./lib";
 
 `;
   for (let key in icons) {

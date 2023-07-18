@@ -1,7 +1,4 @@
-"use client";
-
-import { forwardRef, useContext, ReactElement } from "react";
-import { IconContext } from "./context";
+import { forwardRef, ReactElement } from "react";
 import { IconProps, IconWeight } from "./types";
 
 interface IconBaseProps extends IconProps {
@@ -11,38 +8,29 @@ interface IconBaseProps extends IconProps {
 const IconBase = forwardRef<SVGSVGElement, IconBaseProps>((props, ref) => {
   const {
     alt,
-    color,
-    size,
-    weight,
+    color = "currentColor",
+    size = "1em",
+    weight = "regular",
     mirrored,
     children,
     weights,
     ...restProps
   } = props;
 
-  const {
-    color: contextColor = "currentColor",
-    size: contextSize,
-    weight: contextWeight = "regular",
-    mirrored: contextMirrored = false,
-    ...restContext
-  } = useContext(IconContext);
-
   return (
     <svg
       ref={ref}
       xmlns="http://www.w3.org/2000/svg"
-      width={size ?? contextSize}
-      height={size ?? contextSize}
-      fill={color ?? contextColor}
+      width={size}
+      height={size}
+      fill={color}
       viewBox="0 0 256 256"
-      transform={mirrored || contextMirrored ? "scale(-1, 1)" : undefined}
-      {...restContext}
+      transform={mirrored ? "scale(-1, 1)" : undefined}
       {...restProps}
     >
       {!!alt && <title>{alt}</title>}
       {children}
-      {weights.get(weight ?? contextWeight)}
+      {weights.get(weight)}
     </svg>
   );
 });

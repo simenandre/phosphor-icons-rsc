@@ -1,6 +1,6 @@
 /* GENERATED FILE */
 export type { Icon, IconProps, IconWeight } from "./lib";
-export { IconContext, IconBase } from "./lib";
+export { IconBase } from "./lib";
 
 export { default as AddressBook } from "./icons/AddressBook";
 export { default as AirTrafficControl } from "./icons/AirTrafficControl";
