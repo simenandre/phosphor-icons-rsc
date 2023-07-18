@@ -1,0 +1,6 @@
+name: CI
+on: [push]
+jobs:
+  typical-workflow:
+    name: Workflow
+    uses: bjerkio/workflows/.github/workflows/pnpm-typical.yml@v1
