@@ -1,23 +1,23 @@
 <img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
 
-# phosphor-icons-rsc
+# phosphor-react-sc
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
 This is a fork of [@phosphor-icons/react](https://github.com/phosphor-icons/react). The only change is that the icons no longer use `useContext` in order to support React Server Components.
 
-[![NPM](https://img.shields.io/npm/v/phosphor-icons-rsc.svg?style=flat-square)](https://www.npmjs.com/package/phosphor-icons-rsc)
+[![NPM](https://img.shields.io/npm/v/phosphor-react-sc.svg?style=flat-square)](https://www.npmjs.com/package/phosphor-react-sc)
 
 ## Installation
 
 ```bash
-yarn add phosphor-icons-rsc
+yarn add phosphor-react-sc
 ```
 
 or
 
 ```bash
-npm install --save phosphor-icons-rsc
+npm install --save phosphor-react-sc
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ npm install --save phosphor-icons-rsc
 Simply import the icons you need, and add them anywhere in your render method. Phosphor supports tree-shaking, so your bundle only includes code for the icons you use.
 
 ```tsx
-import { Horse, Heart, Cube } from "phosphor-icons-rsc";
+import { Horse, Heart, Cube } from "phosphor-react-sc";
 
 const App = () => {
   return (
@@ -87,7 +87,7 @@ const RotatingCube = () => {
 You may wish to import all icons at once for use in your project, though depending on your bundler this could prevent tree-shaking and make your app's bundle larger.
 
 ```tsx
-import * as Icon from "phosphor-icons-rsc";
+import * as Icon from "phosphor-react-sc";
 
 <Icon.Smiley />
 <Icon.Folder weight="thin" />
@@ -102,7 +102,7 @@ Next, create a new React `forwardRef` component, importing the `IconBase` compon
 
 ```tsx
 import { forwardRef, ReactElement } from "react";
-import { Icon, IconBase, IconWeight } from "phosphor-icons-rsc";
+import { Icon, IconBase, IconWeight } from "phosphor-react-sc";
 
 const weights = new Map<IconWeight, ReactElement>([
   ["thin", <path d="..." />],

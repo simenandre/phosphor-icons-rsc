@@ -1,5 +1,5 @@
 {
-  "name": "phosphor-icons-rsc",
+  "name": "phosphor-react-sc",
   "version": "1.0.0",
   "type": "module",
   "description": "A clean and friendly icon family for React Server Components",
@@ -10,7 +10,7 @@
     "url": "https://tobiasfried.com"
   },
   "license": "MIT",
-  "repository": "phosphor-icons-rsc",
+  "repository": "simenandre/phosphor-react-sc",
   "homepage": "https://phosphoricons.com",
   "sideEffects": false,
   "private": false,
