@@ -1,28 +1,23 @@
-> **ATTENTION:** As part of a major update, we will be replacing the existing `phosphor-react` package with `@phosphor-icons/react`. We recommend using this new version, as it has improved performance and significantly smaller bundle size. No APIs have been changed, so drop-in replacement should be straightforward. The legacy package will continue to recieve maintenance, but will not be updated with new icons upstream. [Take me to the legacy version ➜](https://github.com/phosphor-icons/react/tree/legacy)
-
 <img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
 
-# @phosphor-icons/react
+# phosphor-icons-rsc
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
-[![NPM](https://img.shields.io/npm/v/@phosphor-icons/react.svg?style=flat-square)](https://www.npmjs.com/package/@phosphor-icons/react) [![Travis](https://img.shields.io/github/actions/workflow/status/phosphor-icons/react/main.yml?branch=vite&style=flat-square)](https://travis-ci.com/github/phosphor-icons/react)
+This is a fork of [@phosphor-icons/react](https://github.com/phosphor-icons/react). The only change is that the icons no longer use `useContext` in order to support React Server Components.
 
-[![GitHub stars](https://img.shields.io/github/stars/phosphor-icons/react?style=flat-square&label=Star)](https://github.com/phosphor-icons/react)
-[![GitHub forks](https://img.shields.io/github/forks/phosphor-icons/react?style=flat-square&label=Fork)](https://github.com/phosphor-icons/react/fork)
-[![GitHub watchers](https://img.shields.io/github/watchers/phosphor-icons/react?style=flat-square&label=Watch)](https://github.com/phosphor-icons/react)
-[![Follow on GitHub](https://img.shields.io/github/followers/rektdeckard?style=flat-square&label=Follow)](https://github.com/rektdeckard)
+[![NPM](https://img.shields.io/npm/v/phosphor-icons-rsc.svg?style=flat-square)](https://www.npmjs.com/package/phosphor-icons-rsc)
 
 ## Installation
 
 ```bash
-yarn add @phosphor-icons/react
+yarn add phosphor-icons-rsc
 ```
 
 or
 
 ```bash
-npm install --save @phosphor-icons/react
+npm install --save phosphor-icons-rsc
 ```
 
 ## Usage
@@ -30,7 +25,7 @@ npm install --save @phosphor-icons/react
 Simply import the icons you need, and add them anywhere in your render method. Phosphor supports tree-shaking, so your bundle only includes code for the icons you use.
 
 ```tsx
-import { Horse, Heart, Cube } from "@phosphor-icons/react";
+import { Horse, Heart, Cube } from "phosphor-icons-rsc";
 
 const App = () => {
   return (
@@ -92,7 +87,7 @@ const RotatingCube = () => {
 You may wish to import all icons at once for use in your project, though depending on your bundler this could prevent tree-shaking and make your app's bundle larger.
 
 ```tsx
-import * as Icon from "@phosphor-icons/react";
+import * as Icon from "phosphor-icons-rsc";
 
 <Icon.Smiley />
 <Icon.Folder weight="thin" />
@@ -107,7 +102,7 @@ Next, create a new React `forwardRef` component, importing the `IconBase` compon
 
 ```tsx
 import { forwardRef, ReactElement } from "react";
-import { Icon, IconBase, IconWeight } from "@phosphor-icons/react";
+import { Icon, IconBase, IconWeight } from "phosphor-icons-rsc";
 
 const weights = new Map<IconWeight, ReactElement>([
   ["thin", <path d="..." />],
