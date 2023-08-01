@@ -4,9 +4,11 @@
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
-**Supports React Server Components**: This is a fork of [@phosphor-icons/react](https://github.com/phosphor-icons/react). The only change is that the icons no longer use `useContext` in order to support React Server Components.
+**Supports React Server Components**: This is a fork of [@phosphor-icons/react][phosphor-icons]. The only change is that the icons no longer use `useContext` to support React Server Components. This plan is to maintain this package for as long it's needed until potentially [@phosphor-icons/react][phosphor-icons] adds support for React Server Components. Follow [the issue about this topic](https://github.com/phosphor-icons/react/issues/54) for more!
 
 [![NPM](https://img.shields.io/npm/v/phosphor-react-sc.svg?style=flat-square)](https://www.npmjs.com/package/phosphor-react-sc)
+
+[phosphor-icons]: https://github.com/phosphor-icons/react
 
 ## Installation
 
